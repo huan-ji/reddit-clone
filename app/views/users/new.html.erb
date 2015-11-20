@@ -1,0 +1,14 @@
+<h1>Create New User</h1>
+<form action="/user" method="post">
+  <%= auth_token %>
+  <label for="username">Username:</label>
+  <input type="text" name="user[username]" id="username">
+  <br>
+
+  <label for="password">Password:</label>
+  <input type="password" name="user[password]" id="password">
+  <br>
+
+  <input type="submit" value="Create New User">
+
+</form>
