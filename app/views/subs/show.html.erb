@@ -1,0 +1,28 @@
+<%= link_to "Back to All Subs", subs_url %>
+<h1>/r/<%= @sub.title %></h1>
+<hr>
+<div>
+<h5 style="display:inline">Moderated by: <%= @sub.moderator.username %></h5>
+<% if current_user == @sub.moderator %>
+  <%= button_to "Edit Sub", edit_sub_url(@sub), method: :get %>
+<% end %>
+</div>
+
+
+<h3>Description:</h3>
+
+<p>
+<%= @sub.description %>
+</p>
+
+<h3>List of All Posts</h3>
+<br>
+
+<ul>
+<% @sub.posts.each do |post| %>
+  <li>
+    <%= link_to "#{post.title}", post_url(post) %>
+  </li>
+<% end %>
+</ul>
+<%= button_to "New Post", new_post_url, method: :get%>

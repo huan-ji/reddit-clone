@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       )
     if @user
       login!(@user)
-      redirect_to user_url
+      redirect_to subs_url
     else
       render :new
     end
